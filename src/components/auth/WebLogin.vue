@@ -3,9 +3,10 @@
     import BaseInput from '../ui/BaseInput.vue';
     import BaseButton from '../ui/BaseButton.vue';
     
-    import { reactive } from 'vue';
+    import { reactive, ref } from 'vue';
     import { useStore } from 'vuex';
     import { useRouter } from 'vue-router';
+    
 
     const store = useStore()
     const router = useRouter()
@@ -15,11 +16,16 @@
         password: "",
         isLogin: true,
     })
-    
+    const error = ref("")
     const login = async () => {
-        await store.dispatch("auth/getLoginData", loginData)
-        router.push("/")
+    error.value = ""
+    const user = await store.dispatch("auth/getLoginData", loginData)
+    if (user) {
+        router.push("/user/personal-info") 
+    } else {
+        error.value = "Login failed. Please check your email and password."
     }
+}
 </script>
 
 <template>
@@ -34,7 +40,7 @@
             <div class="my-4"><!-- Email -->
                 <BaseInput
                     type="email"
-                    identiy="email"
+                    identity="email"
                     placeholder="Ex: student@timedoor.com"
                     label="Email"
                     v-model="loginData.email"/>
@@ -42,13 +48,14 @@
             <div class="my-4"><!-- Password -->
               <BaseInput
                 type="password"
-                identiy="password"
+                identity="password"
                 placeholder="*********"
                 label="Password"
                 v-model="loginData.password"/>
             </div>
             <BaseButton class="login w-100 my-3">Login</BaseButton>
         </form>
+        <div v-if="error" class="alert alert-danger text-center">{{ error }}</div>
         <div class="text-center mt-4">
             <p class="fw-semibold">
                 Don’t have an account?<span style="color: #4c4ddc">

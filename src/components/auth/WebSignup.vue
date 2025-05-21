@@ -85,7 +85,7 @@
                     <div class="col-md-6"><!-- Firstname -->
                         <BaseInput
                         type="text"
-                        identiy="firstname"
+                        identity="firstname"
                         placeholder="Ex: Juan"
                         label="First Name"
                         v-model="signupData.firstname"/>
@@ -93,7 +93,7 @@
                     <div class="col-md-6"><!-- Lastname -->
                         <BaseInput
                         type="text"
-                        identiy="lastname"
+                        identity="lastname"
                         placeholder="Ex: Carlos"
                         label="Last Name"
                         v-model="signupData.lastname"/>
@@ -102,7 +102,7 @@
                 <div class="my-4"><!-- Username -->
                     <BaseInput
                         type="text"
-                        identiy="username"
+                        identity="username"
                         placeholder="Ex: timedoorstudent"
                         label="Username"
                         v-model="signupData.username"/>
@@ -110,7 +110,7 @@
                 <div class="my-4"><!-- Email -->
                     <BaseInput
                         type="email"
-                        identiy="email"
+                        identity="email"
                         placeholder="Ex: student@timedoor.com"
                         label="Email"
                         v-model="signupData.email"/>
@@ -118,7 +118,7 @@
                 <div class="my-4"><!-- Password -->
                     <BaseInput
                         type="password"
-                        identiy="password"
+                        identity="password"
                         placeholder="*********"
                         label="Password"
                         v-model="signupData.password" @keyInput="passwordCheck" />
@@ -131,7 +131,7 @@
                 <div class="my-4"><!-- Confirm Password -->
                     <BaseInput
                         type="password"
-                        identiy="confirmPassword"
+                        identity="confirmPassword"
                         placeholder="*********"
                         label="Confirm Password"
                         v-model="signupData.confirmationPassword" @keyInput="confirmationPasswordCheck"/>

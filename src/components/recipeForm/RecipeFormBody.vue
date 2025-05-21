@@ -103,7 +103,7 @@
                     <div class="mb-3"> <!-- 1 --> 
                         <BaseInput 
                             type="file"
-                            identiy="recipeImage"
+                            identity="recipeImage"
                             label="Photo Image"
                             @input="checkImage" />
                     </div>
@@ -113,7 +113,7 @@
                     <div class="mb-3"> <!-- 2 --> 
                         <BaseInput 
                             type="text"
-                            identiy="recipeTitle"
+                            identity="recipeTitle"
                             placeholder="Give a title to the recipe"
                             label="Recipe Title"
                             v-model="recipeData.name" />
@@ -149,7 +149,7 @@
                     <div class="mb-3"> <!-- 5 --> 
                         <BaseInput
                         type="number"
-                        identiy="prepTime"
+                        identity="prepTime"
                         placeholder="0"
                         label="Prep Time"
                         v-model="recipeData.prepTime" />
@@ -160,7 +160,7 @@
                     <div class="mb-3"> <!-- 6 --> 
                         <BaseInput
                         type="number"
-                        identiy="cookTime"
+                        identity="cookTime"
                         placeholder="0"
                         label="Cook Time"
                         v-model="recipeData.cookTime" />
@@ -171,7 +171,7 @@
                     <div class="mb-3"> <!-- 7 -->
                         <BaseInput
                         type="number"
-                        identiy="totalTime"
+                        identity="totalTime"
                         placeholder="0"
                         label="Total Time"
                         v-model="recipeData.totalTime" 
@@ -197,7 +197,7 @@
                         <div class="col-lg-11 col-11"> <!-- 8 --> 
                             <BaseInput
                                 type="text"
-                                identiy="ingredient"
+                                identity="ingredient"
                                 placeholder="Ex: 1 cup of sugar"
                                 v-model="recipeData.ingredients[count - 1]" />
                         </div>
@@ -232,7 +232,7 @@
                     <div class="col-lg-11 col-11"><!-- 10 -->
                         <BaseInput 
                         type="text"
-                        identiy="direction"
+                        identity="direction"
                         placeholder="Step 1: Preheat the oven to 350F"
                         v-model="recipeData.directions[count - 1]" />
                     </div>
